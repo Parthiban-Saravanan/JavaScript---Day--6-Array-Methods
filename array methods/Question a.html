@@ -1,0 +1,21 @@
+//Get all the countries from Asia continent/region using Filter function
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question (a)</title>
+</head>
+<body>
+  <script>
+    fetch('https://restcountries.com/v3.1/all')
+      .then(response => response.json())
+      .then(data => {
+        const asiaCountries = data.filter(country => country.region === 'Asia');
+        console.log('Countries from Asia:', asiaCountries);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+</body>
+</html>
